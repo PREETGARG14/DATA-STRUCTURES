@@ -1,29 +1,24 @@
-
 import java.util.*;
-
 
 public class Main {
 
   public static void main(String[] args) {
     Scanner scn = new Scanner(System.in);
-    int t = scn.nextInt();
 
+    int t = scn.nextInt();   //t no of input
     for (int i = 0; i < t; i++) {
-      int n = scn.nextInt();
-
-      int div = 2;
-      while (div * div <= n) {
-        if (n % div == 0) {
+      int count = 0;
+      int num = scn.nextInt();
+      for (int j = 2; j * j <= num; j++) {
+        if (num % j == 0) {
+          count++;
           break;
         }
-        div++;
       }
-
-      if (div * div > n) {
+      if (count == 0)
         System.out.println("prime");
-      } else {
+      else
         System.out.println("not prime");
-      }
     }
 
   }
